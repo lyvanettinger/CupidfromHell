@@ -1,9 +1,16 @@
+label prologue:
+    call prologue_00 from _prologue_00
+    call prologue_01 from _prologue_01
+
+    # present route choice and jump to route's main global label
+
+    return
+
+# ----------------------------
 # --- PROLOGUE MAIN LABELS ---
+# ----------------------------
 label prologue_00:
-
-    # write prologue with choices for individual routes (Zak, Payne, Rye, (hidden) Keath)
-
-    scene bg room
+    scene bg waiting room
     with fade
 
     mc "The invitation told me to go here, but..."
@@ -26,13 +33,35 @@ label prologue_00:
         mc "..!!"
 
         "Who are you?":
-            jump choice1a
+            call .choice_0
+            return
 
         "H-Hi, are you here for the game testing too?":
-            jump choice1b
+            jump .choice_1
+            return
 
     return
 
+label .choice_0:
+    payne "Oh hi, didn't notice I was staring in your direction, m'sorry!"
+    payne "The name's Payne, are you also here for testing the new escape room?"
+    "He doesn't seem too bad, actually"
+    "He sounds a lot less scary than he looks"
+    mc "Yeah, I am! And nice to meet you, I'm [mcname]"
+    return
+
+label .choice_1:
+    payne "Ah, sorry, I must've been staring in your direction"
+    payne "Yes, I'm here for the escape room as well!"
+    payne "A friend recommended it to me, even though I'm not that into these types of things, they seem pretty interesting"
+    "He doesn't seem so scary after all, but is he a first timer?"
+    "I thought they would only invite people that know their way around"
+    mc "They are interesting for sure! I like them a lot and am a bit of an expert on them, so I can help out when needed!"
+    payne "*laughs nervously* Hahaha yeah, thanks, we'll count on you then"
+    return
+# ----------------------------
+
+# ----------------------------
 label prologue_01:
 
     payne "Seems like we're the only ones here at the moment"
@@ -54,30 +83,3 @@ label prologue_01:
     keath "HI BITCHES"
 
     return
-
-
-# --- PROLOGUE CHOICE LABELS ---
-label choice1a:
-    payne "Oh hi, didn't notice I was staring in your direction, m'sorry!"
-    payne "The name's Payne, are you also here for testing the new escape room?"
-    "He doesn't seem too bad, actually"
-    "He sounds a lot less scary than he looks"
-    mc "Yeah, I am! And nice to meet you, I'm [mcname]"
-
-    jump prologue_01
-
-    return
-
-label choice1b:
-    payne "Ah, sorry, I must've been staring in your direction"
-    payne "Yes, I'm here for the escape room as well!"
-    payne "A friend recommended it to me, even though I'm not that into these types of things, they seem pretty interesting"
-    "He doesn't seem so scary after all, but is he a first timer?"
-    "I thought they would only invite people that know their way around"
-    mc "They are interesting for sure! I like them a lot and am a bit of an expert on them, so I can help out when needed!"
-    payne "*laughs nervously* Hahaha yeah, thanks, we'll count on you then"
-
-    jump prologue_01
-
-    return
-

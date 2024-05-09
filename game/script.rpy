@@ -26,6 +26,7 @@ transform rightcenter:
 
 # The game starts here.
 label start:
+    stop music fadeout 1.0
     # player enters name
     python:
         mcname = renpy.input("Before you enter into hell, write down your name", length=32)
@@ -34,8 +35,8 @@ label start:
         if not mcname:
             mcname = "You"
 
-    # game starts
-    jump prologue_00
+    # game start
+    jump prologue
 
     #game ends
     return
