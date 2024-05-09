@@ -1,6 +1,6 @@
 ﻿# Game script
 
-# -- Characters --
+# --- CHARACTERS ---
 # MC
 define mc = Character("[mcname]")
 define you = Character("You")
@@ -10,7 +10,7 @@ define payne = Character("Payne")
 define rye = Character("Rye")
 define keath = Character("Keath")
 
-# -- Custom transforms --
+# --- CUSTOM TRANSFORMS ---
 # Size
 transform halfsize: 
     zoom 0.5
@@ -24,7 +24,7 @@ transform rightcenter:
     xalign 0.85
     yalign 0.5
 
-# The game starts here.
+# --- GAME START ---
 label start:
     stop music fadeout 1.0
     # player enters name
