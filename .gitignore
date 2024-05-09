@@ -178,6 +178,8 @@ pyrightconfig.json
 ########################################
 cache/
 saves/
+game/cache
+game/saves
 
 
 # Compiled source #
