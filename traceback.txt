@@ -1,0 +1,32 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 45, in script
+    show payne picrew 2 at half_size, bottomright
+  File "game/script.rpy", line 45, in <module>
+    show payne picrew 2 at half_size, bottomright
+NameError: name 'bottomright' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 45, in script
+    show payne picrew 2 at half_size, bottomright
+  File "D:\renpy\renpy-8.2.1-sdk\renpy\ast.py", line 1113, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\renpy\renpy-8.2.1-sdk\renpy\ast.py", line 1072, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "D:\renpy\renpy-8.2.1-sdk\renpy\ast.py", line 1072, in <listcomp>
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "D:\renpy\renpy-8.2.1-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\renpy\renpy-8.2.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 45, in <module>
+    show payne picrew 2 at half_size, bottomright
+NameError: name 'bottomright' is not defined
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.2.1.24030407
+CupidfromHell 1.0
+Thu May  9 16:32:02 2024
