@@ -10,18 +10,18 @@ label prologue:
 # --- PROLOGUE MAIN LABELS ---
 # ----------------------------
 label prologue_00:
-    scene bg waiting room
+    scene bg game 3
     with fade
 
-    mc "The invitation told me to go here, but..."
-    mc "I don't see anyone yet"
-    mc "..."
+    "The invitation told me to go here, but..."
+    "I don't see anyone yet"
+    "..."
 
     show payne picrew 2 at halfsize, rightcenter
     with fade
 
-    mc "There's someone standing in the corner!" with hpunch
-    mc "I almost didn't see him... Did he not see me yet?"
+    "There's someone standing in the corner!" with hpunch
+    "I almost didn't see him... Did he not see me yet?"
     "I walk closer curiously."
 
     show payne picrew 2 at truecenter

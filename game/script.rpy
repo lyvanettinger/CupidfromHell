@@ -29,7 +29,7 @@ label start:
     stop music fadeout 1.0
     # player enters name
     python:
-        mcname = renpy.input("Before you enter into hell, write down your name", length=32)
+        mcname = renpy.input("Before you enter into hell, write down your name", length=10)
         mcname = mcname.strip()
 
         if not mcname:
