@@ -13,16 +13,24 @@ label prologue_00:
     scene bg game 3
     with fade
 
-    "The invitation told me to go here, but..."
-    "I don't see anyone yet"
-    "..."
+    """
+    The invitation told me to go here, but...
+
+    I don't see anyone yet
+
+    ...
+    """
 
     show payne picrew 2 at halfsize, rightcenter
     with fade
 
     "There's someone standing in the corner!" with hpunch
-    "I almost didn't see him... Did he not see me yet?"
-    "I walk closer curiously."
+
+    """
+    I almost didn't see him... Did he not see me yet?
+
+    I walk closer curiously.
+    """
 
     show payne picrew 2 at truecenter
     with fade
@@ -45,8 +53,13 @@ label prologue_00:
 label .choice_0:
     payne "Oh hi, didn't notice I was staring in your direction, m'sorry!"
     payne "The name's Payne, are you also here for testing the new escape room?"
-    "He doesn't seem too bad, actually"
-    "He sounds a lot less scary than he looks"
+
+    """
+    He doesn't seem too bad, actually
+
+    He sounds a lot less scary than he looks
+    """
+
     mc "Yeah, I am! And nice to meet you, I'm [mcname]"
     return
 
@@ -54,8 +67,13 @@ label .choice_1:
     payne "Ah, sorry, I must've been staring in your direction"
     payne "Yes, I'm here for the escape room as well!"
     payne "A friend recommended it to me, even though I'm not that into these types of things, they seem pretty interesting"
-    "He doesn't seem so scary after all, but is he a first timer?"
-    "I thought they would only invite people that know their way around"
+
+    """
+    He doesn't seem so scary after all, but is he a first timer?
+    
+    I thought they would only invite people that know their way around
+    """
+
     mc "They are interesting for sure! I like them a lot and am a bit of an expert on them, so I can help out when needed!"
     payne "*laughs nervously* Hahaha yeah, thanks, we'll count on you then"
     return
