@@ -182,6 +182,12 @@ game/cache/
 game/saves/
 
 
+### Krita ###
+# Don't track these files #
+###########################
+*.kra
+
+
 # Compiled source #
 ###################
 *.com
