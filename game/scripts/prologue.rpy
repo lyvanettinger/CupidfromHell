@@ -1,6 +1,9 @@
 label prologue:
-    call prologue_00 from _prologue_00
-    call prologue_01 from _prologue_01
+    # can these calls be automated somehow? just need the amount of labels in a chapter and loop over them
+    call prologue_scene_01 from _prologue_scene_01
+    call prologue_scene_02 from _prologue_scene_02
+    call prologue_scene_03 from _prologue_scene_03
+    call prologue_scene_04 from _prologue_scene_04
 
     # present route choice and jump to route's main global label
 
@@ -9,7 +12,13 @@ label prologue:
 # ----------------------------
 # --- PROLOGUE MAIN LABELS ---
 # ----------------------------
-label prologue_00:
+label prologue_scene_01:
+    # scene 1: (show hand holding letter OR just the letter on a table/the envelope it came inside of)
+    # narrator briefs the letter MC got for the escape room testing
+    # something along the lines of: MC, <insert well known company name> has recognized your exceptional puzzle solving skills and would like to formally invite you
+    # to a test run of our new escape room establishment. as it's currently in development, please do not disclose any information regarding this test and letter
+    # to anyone
+
     scene bg game 3
     with fade
 
@@ -37,50 +46,15 @@ label prologue_00:
 
     "When I was close enough to him and could observe his face, I saw that he was looking at me."
 
-    menu:
-        mc "..!!"
-
-        "Who are you?":
-            call .choice_0
-            return
-
-        "H-Hi, are you here for the game testing too?":
-            jump .choice_1
-            return
-
-    return
-
-label .choice_0:
-    payne "Oh hi, didn't notice I was staring in your direction, m'sorry!"
-    payne "The name's Payne, are you also here for testing the new escape room?"
-
-    """
-    He doesn't seem too bad, actually
-
-    He sounds a lot less scary than he looks
-    """
-
-    mc "Yeah, I am! And nice to meet you, I'm [mcname]"
-    return
-
-label .choice_1:
-    payne "Ah, sorry, I must've been staring in your direction"
-    payne "Yes, I'm here for the escape room as well!"
-    payne "A friend recommended it to me, even though I'm not that into these types of things, they seem pretty interesting"
-
-    """
-    He doesn't seem so scary after all, but is he a first timer?
-    
-    I thought they would only invite people that know their way around
-    """
-
-    mc "They are interesting for sure! I like them a lot and am a bit of an expert on them, so I can help out when needed!"
-    payne "*laughs nervously* Hahaha yeah, thanks, we'll count on you then"
     return
 # ----------------------------
 
 # ----------------------------
-label prologue_01:
+label prologue_scene_02:
+    # scene 2: (shows receptionist desk inside love hotel)
+    # MC is on her way to the escape room location. she gets to the address and it's.... a love hotel?!?!?!?
+    # what the hell, of all places, this is where they're holding the escape room testing?? MC hesitantly goes inside and talks to the receptionist, showing them the letter
+    # the receptionist tells MC to take the elevator down to the -2 floor
 
     payne "Seems like we're the only ones here at the moment"
     payne "Let's wait for the other participants, shall we?"
@@ -101,3 +75,62 @@ label prologue_01:
     keath "HI BITCHES"
 
     return
+# ----------------------------
+
+# ----------------------------
+label prologue_scene_03:
+    # scene 3: (shows waiting room for escape room; chairs and escape room entrance doors closed/open depending)
+    # MC steps out of the elevator and enters the waiting room. She's the third to arrive there. A grumpy businessman was already sitting in one of the chairs in the waiting room,
+    # scrolling his phone. another man, more casually dressed, stood across from him, taking in a spot where he had view over the entire room and the elevator doors.
+    # there was an ominous atmosphere in the air, the two men didn't seem particularly sociable. MC awkwardly takes place in the waiting room
+    # (timeskip)
+    # the elevator moves again and opens with a ding, revealing a man around MC's age. He loudly announces himself to the room and MC can feel her nerves calming, happily greeting him
+    # the man standing also greets him with a short "good day" and kurt nod, while the businessman only looks up from his phone briefly.
+    # MC gets up and makes small talk with the new guy, he seems excited for the escape room testing.
+    # (very small timeskip)
+    # the escaperoom doors open and a cute little creature blob (Keath's familiar) shows up, welcoming all the contestants, introducing itself as Lili.
+    # it wishes everyone good luck and, before everyone goes inside, tells them the girl among them (MC) should enter first. everyone looks at MC.
+    # the cute creature leaves and MC enters the escape room first alone
+
+    return
+# ----------------------------
+
+# ----------------------------
+label prologue_scene_04:
+    # scene 4: (shows dark background with choice menu of 3 buttons/levers)
+    # MC enters the escape room first alone, the doors close briefly. the cute creature's voice can be heard telling her to choose one out of three buttons/levers. this will
+    # determine the character route, as Keath will fire an arrow into that person's heart to aid in falling in love with MC.
+    # symbols on buttons/underneath levers:
+    # blue Stats/stonks? energy drink can with 6? Zak
+    # yellow graceful lady hat? double mask? Rye
+    # green crosshair? paper with knife through? Payne
+
+    menu: # implement slightly differently organized choice menu, listing them horizontally instead of vertical, with image buttons
+        "..which button should I push?"
+
+        "Blue":
+            call .choice_1
+            return
+
+        "Yellow":
+            jump .choice_2
+            return
+
+        "Green":
+            jump .choice_3
+            return
+
+    return
+
+label .choice_1:
+    "Go on Zak's route"
+    return
+
+label .choice_2:
+    "Go on Rye's route"
+    return
+
+label .choice_3:
+    "Go on Payne's route"
+    return
+# ----------------------------
