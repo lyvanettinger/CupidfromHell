@@ -6,6 +6,7 @@ label prologue:
     call prologue_scene_04 from _prologue_scene_04
 
     # present route choice and jump to route's main global label
+    "End game."
 
     return
 
@@ -92,6 +93,10 @@ label prologue_scene_03:
     # it wishes everyone good luck and, before everyone goes inside, tells them the girl among them (MC) should enter first. everyone looks at MC.
     # the cute creature leaves and MC enters the escape room first alone
 
+    """
+    (Insert long waiting room scene)
+    """
+
     return
 # ----------------------------
 
@@ -105,18 +110,36 @@ label prologue_scene_04:
     # yellow graceful lady hat? double mask? Rye
     # green crosshair? paper with knife through? Payne
 
+    """
+    [mcname] enters the escape room and the doors closed behind me with a bang.
+
+    It's pitch black inside..
+
+    After a while, 3 buttons light up in front of [mcname].
+    """
+
+    mc "Is this the first puzzle?"
+    mc "..."
+
+    """
+    [mcname] feels around her to see if there's anything else worth of note in the room.
+    """
+
+    mc "There seems to be nothing else around."
+    mc "I guess I'll have to push one of them."
+
     menu: # implement slightly differently organized choice menu, listing them horizontally instead of vertical, with image buttons
-        "..which button should I push?"
+        mc "..which button should I push?"
 
         "Blue":
-            call .choice_1
+            jump .choice_1
             return
 
-        "Yellow":
+        "Yellow" if False: # not yet implemented
             jump .choice_2
             return
 
-        "Green":
+        "Green" if False: # not yet implemented
             jump .choice_3
             return
 
@@ -124,6 +147,7 @@ label prologue_scene_04:
 
 label .choice_1:
     "Go on Zak's route"
+    jump zak_route
     return
 
 label .choice_2:
